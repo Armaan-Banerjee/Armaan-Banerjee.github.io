@@ -1,6 +1,6 @@
 {% comment %} Add a page here and it appears in the nav. {% endcomment %}
 <nav class="nav" aria-label="Primary">
-  {% assign links = "/,Home|/about/,About|/articles/,Articles|/papers/,Papers|/contact/,Contact" | split: "|" %}
+  {% assign links = "/,Home|/about/,About|/articles/,Articles|/papers/,Papers|/courses/,Courses|/contact/,Contact" | split: "|" %}
   <ul>
     {% for link in links %}
       {% assign parts = link | split: "," %}
@@ -10,6 +10,7 @@
       {% if page.url == href %}{% assign current = true %}{% endif %}
       {% if href == '/articles/' and page.collection == 'articles' %}{% assign current = true %}{% endif %}
       {% if href == '/papers/' and page.collection == 'papers' %}{% assign current = true %}{% endif %}
+      {% if href == '/courses/' and page.collection == 'courses' %}{% assign current = true %}{% endif %}
       <li>
         <a href="{{ href | relative_url }}"{% if current %} aria-current="page"{% endif %}>{{ label }}</a>
       </li>

@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<h1>{{ page.title }}</h1>
+
+{{ content }}
+
+{% assign courses = site.courses | sort: 'date' | reverse %}
+{% if courses.size == 0 %}
+  <p>Nothing published yet. The first one goes in <code>_courses/</code>.</p>
+{% else %}
+  {% include article-list.html articles=courses %}
+{% endif %}

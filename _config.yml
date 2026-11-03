@@ -17,12 +17,17 @@ collections:
   papers:
     output: true
     permalink: /papers/:name/
+  courses:
+    output: true
+    permalink: /courses/:name/
 
 defaults:
   - scope: { path: "", type: "articles" }
     values: { layout: "article" }
   - scope: { path: "", type: "papers" }
     values: { layout: "paper" }
+  - scope: { path: "", type: "courses" }
+    values: { layout: "course" }
   - scope: { path: "" }
     values: { layout: "page" }
 
